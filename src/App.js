@@ -18,7 +18,7 @@ function App() {
     const handleGenerateJobDescription = async () => {
         try {
             const response = await axios.post(
-                'https://interview-questions-be-test.vercel.app/generate/jobDescriptionPrompt',
+                'https://interview-questions-ad3cff6d86c0.herokuapp.com/generate/jobDescriptionPrompt',
                 { prompt: jobDescriptionPrompt },
                 {
                     headers: {
