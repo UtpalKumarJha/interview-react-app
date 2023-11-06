@@ -22,8 +22,7 @@ function App() {
                 { prompt: jobDescriptionPrompt },
                 {
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Origin': 'https://interview-react-app.vercel.app/'
+                        'Content-Type': 'application/json'
                     }
                 }
             );
@@ -41,8 +40,7 @@ function App() {
                 { prompt: questionsPrompt },
                 {
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Origin': 'https://interview-react-app.vercel.app/'
+                        'Content-Type': 'application/json'
                     }
                 }
             );
