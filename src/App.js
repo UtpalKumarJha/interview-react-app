@@ -17,7 +17,16 @@ function App() {
 
     const handleGenerateJobDescription = async () => {
         try {
-            const response = await axios.post('https://interview-questions-backend.vercel.app/api/generate/jobDescriptionPrompt', { prompt: jobDescriptionPrompt });
+            const response = await axios.post(
+                'https://interview-questions-backend.vercel.app/api/generate/jobDescriptionPrompt',
+                { prompt: jobDescriptionPrompt },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Origin': 'https://interview-react-app.vercel.app/'
+                    }
+                }
+            );
             setJobDescription(response.data.generatedText);
             setQuestionsPrompt(`Based on the above job description, generate 5 multiple choice questions for potential candidates:`);
         } catch (error) {
@@ -27,7 +36,17 @@ function App() {
 
     const handleGenerateQuestions = async () => {
         try {
-            const response = await axios.post('https://interview-questions-backend.vercel.app/api/generate/questionPrompt', { prompt: questionsPrompt });
+            const response = await axios.post(
+                'https://interview-questions-backend.vercel.app/api/generate/questionPrompt',
+                { prompt: questionsPrompt },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Origin': 'https://interview-react-app.vercel.app/'
+                    }
+                }
+            );
+        //    const response = await axios.post('https://interview-questions-backend.vercel.app/api/generate/questionPrompt', { prompt: questionsPrompt });
             setQuestions(response.data.generatedText);
         } catch (error) {
             console.error('Error generating questions:', error);
