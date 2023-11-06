@@ -18,7 +18,7 @@ function App() {
     const handleGenerateJobDescription = async () => {
         try {
             const response = await axios.post(
-                'https://zippy-elf-b8dd07.netlify.app/generate/jobDescriptionPrompt',
+                'https://interview-questions-be-test.vercel.app/generate/jobDescriptionPrompt',
                 { prompt: jobDescriptionPrompt },
                 {
                     headers: {
