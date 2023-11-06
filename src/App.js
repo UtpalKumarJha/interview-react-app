@@ -23,7 +23,8 @@ function App() {
                 {
                     headers: {
                         'Content-Type': 'application/json'
-                    }
+                    },
+                    timeout: 300000, 
                 }
             );
             setJobDescription(response.data.generatedText);
